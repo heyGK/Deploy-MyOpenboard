@@ -33,7 +33,7 @@ tool.strokeStyle = penColor;
 tool.lineWidth = penWidth;
 
 // mousedown -> start new path, mousemove -> path fill (graphics)
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener("mousedown", (e) => {
     mouseDown = true;
     // beginPath({
     //     x: e.clientX,
@@ -46,7 +46,7 @@ canvas.addEventListener("mousemove", (e) => {
     socket.emit("beginPath", data);
 })
 
-canvas.addEventListener("mousedown", (e) => {
+canvas.addEventListener("mousemove", (e) => {
     if (mouseDown) {
         let data = {
             x : e.clientX,
